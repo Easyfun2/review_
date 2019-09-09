@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./library/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+
+
+        <!-- 这里是header -->
+        <div class="header">
+            <p>Life is suffering</p>
+        </div>
+
+        <!-- title -->
+        <div class="title">
+            <div class="container">
+
+            
+                <p>This is a title</p>
+                
+                <input class="col-7" type="text" v-model:value="current.val">
+                <button class="col-2" v-on:click="add">summit</button>
+            </div>
+        </div>
+
+
+
+        
+
+
+
+        <!-- task-list -->
+        <div class="task-list ">
+            <div class="container">     
+                <div id="list-doing">
+                    TO DO
+                     <!-- {{current.val}} -->
+                    <div id="list-item" v-for="(item,index) in list">
+                        {{index + 1}} {{item}}
+                    </div>
+
+                    <div id="list-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 
+                        </div>
+
+
+                </div>
+
+                <div id="list-done">
+                    DONE
+                    <div id="list-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 
+                    </div>
+    
+                    <div id="list-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 
+                    </div>
+    
+                    <div id="list-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    
+
+
+
+
+
+
+    </div>
+    
+
+
+    <script src="./library/vue.js"></script>
+    <script src="./js/loacalStorage.js"></script>
+    <script src="./js/main.js"></script>
+
+    
+</body>
+</html>

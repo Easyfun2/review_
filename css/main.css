@@ -1,0 +1,131 @@
+*{
+    color: grey;
+    background-color:rgba(122,123,31,0.1);
+    margin: 0;
+    padding: 0;
+}
+
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9{
+    float: left;
+    position: relative;
+    min-height: 1px;
+
+}
+
+
+.col-1{
+    width:10%;
+}
+.col-2{
+    width:20%;
+}
+.col-3{
+    width:30%;
+}
+.col-4{
+    width:40%;
+}
+.col-5{
+    width:50%;
+}
+.col-6{
+    width:60%;
+}
+.col-7{
+    width:70%;
+}
+.col-8{
+    width:80%;
+}
+.col-9{
+    width:90%;
+}
+
+
+
+.container{
+    width:50%;
+    height:auto;
+    margin:0 auto;
+}
+.header{
+    width: 100%;
+    height:120px;
+    background-color: goldenrod;
+    display: block;
+    position: relative; 
+ 
+    /* overflow: hidden; */
+
+}
+
+.header p{
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    padding-top:40px;
+    
+    
+}
+
+/* title */
+
+.title{
+    width:100%;
+    height:auto;
+    /* border: 1px solid red; */
+    display: block;
+    float: left;
+}
+
+.title p{
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+    
+}
+
+.title input{
+    /* width: 100%; */
+    height: 40px;
+    display: inline-block;
+    
+}
+
+
+
+
+
+
+/* task-list */
+.task-list{
+    width:100%;
+    height:500px;
+    position: relative; 
+    display: block;
+    float: left;
+}
+
+#list-doing,#list-done{
+    width:100%;
+    height: auto;
+    margin: 20px 0;
+    border: 3px solid greenyellow;
+}
+
+#list-item{
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    font-weight: 300px;
+    margin: 30px 5px;
+}
