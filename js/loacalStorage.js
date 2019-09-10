@@ -1,15 +1,34 @@
 
-var set = function(key,value) {
-    localStorage.setItem(key,value);    
+;(function () {
     
-};
 
-var get = function (key) {
-    return localStorage.getItem(key);
+    var set = function(key,value) {
+
+        var json = JSON.stringify(value);
+        localStorage.setItem(key,json);    
+        // 以json的形式，存。
+        
+    };
+
+    var get = function (key) {
+
+        var json = localStorage.getItem(key);
+        
+        if(json){
+            return JSON.parse(json)
+        };
+    }
+
+    window.ms = {
+        set:set,
+        get:get,
+    };
     
-}
+})();
 
 // var test;
 
-set(1,"test");
-console.log(get(1));
+
+ms.set('test',new Date());
+
+console.log("看看现在的时间是，",ms.get('test'));

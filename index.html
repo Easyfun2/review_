@@ -41,21 +41,30 @@
                 <div id="list-doing">
                     TO DO
                      <!-- {{current.val}} -->
-                    <div id="list-item" v-for="(item,index) in list">
-                        {{index + 1}} {{item}}
-                    </div>
+                    <div id="list-item" v-for="(item,index) in list" v-if="!item.completed" >
+                        {{index + 1}}、 {{item.val}}
+                        <button v-on:click="completed(index)">DONE</button>
+                        <button>DELECT</button>
+                        <button>UPDATE</button>
 
+                    </div>
                     <div id="list-item">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 
-                        </div>
+                        ** life is suffering
+                </div>
+
+
 
 
                 </div>
 
                 <div id="list-done">
                     DONE
-                    <div id="list-item">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 
+                    <div id="list-item" v-for="(item,index) in list" v-if="item.completed">
+                            {{index + 1}}、 {{item.val}}
+                            <button v-on:click="completed(index)">NOT DONE</button>
+
+                            <button>DELECT</button>
+                            <button>UPDATE</button>
                     </div>
     
                     <div id="list-item">
