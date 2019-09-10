@@ -19,14 +19,14 @@
 
         <!-- title -->
         <div class="title">
-            <div class="container">
+            <form class="container" @submit.prevent="add">
 
             
                 <p>This is a title</p>
                 
                 <input class="col-7" type="text" v-model:value="current.val">
-                <button class="col-2" v-on:click="add">summit</button>
-            </div>
+                <button class="col-2" type="submit">summit</button>
+            </form>
         </div>
 
 

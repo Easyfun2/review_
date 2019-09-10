@@ -2,7 +2,6 @@ var app= new Vue({
 
     el:"#main",
     data:{
-        msg:"nihao",
         current:{
             id:"",
             val:"",
@@ -21,7 +20,7 @@ var app= new Vue({
 
     mounted:function(){
         // list = ms.get('LIST');
-        console.log(this.list);
+        // console.log(this.list);
         
         var val = ms.get("LIST");
         this.list = val || this.list;
@@ -32,7 +31,8 @@ var app= new Vue({
 
         var current = this.current;
         // current.id ++;
-        console.log("current的属性",typeof current.val);
+        console.log("current.val的属性",typeof current.val);
+        console.log("current.val的数值",current.val);
 
         if(current.val.length > 0){
 
@@ -52,8 +52,8 @@ var app= new Vue({
        },
 
        completed:function (id) {
-           console.log(099);
-           console.log(id);
+        //    console.log(099);
+        //    console.log(id);
             // var me= this; 
             // var index= this.list.findIndex(
             //     function(id){ 
@@ -69,8 +69,10 @@ var app= new Vue({
             // console.log("找到的索引值为。",index);
             // console.log("找到的索引值为。",me.list.index);
 
-            this.list[id].completed=!this.list[id].completed;
-            console.log('test',this.list[id].completed)
+            Vue.set(this.list[id],'completed',!this.list[id].completed);
+
+            // this.list[id].completed=!this.list[id].completed;
+            console.log('此时 completed 的值',this.list[id].completed)
 
            
        },
