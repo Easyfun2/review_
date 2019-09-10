@@ -44,7 +44,7 @@
                     <div id="list-item" v-for="(item,index) in list" v-if="!item.completed" >
                         {{index + 1}}、 {{item.val}}
                         <button v-on:click="completed(index)">DONE</button>
-                        <button>DELECT</button>
+                        <button v-on:click="delect(index)">DELECT</button>
                         <button>UPDATE</button>
 
                     </div>
@@ -67,9 +67,7 @@
                             <button>UPDATE</button>
                     </div>
     
-                    <div id="list-item">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 
-                    </div>
+
     
                     <div id="list-item">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque 

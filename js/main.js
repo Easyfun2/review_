@@ -40,8 +40,7 @@ var app= new Vue({
         }
 
         
-        console.log("current的值:",this.current);
-        console.log("list的值:",this.list);
+     
         
         this.init_current();
            
@@ -73,6 +72,12 @@ var app= new Vue({
             this.list[id].completed=!this.list[id].completed;
             console.log('test',this.list[id].completed)
 
+           
+       },
+
+
+       delect:function (id) {
+           this.list.splice(id,1);
            
        }
        
