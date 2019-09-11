@@ -1,19 +1,19 @@
 var app= new Vue({
 
     el:"#main",
+
     data:{
+        id_timer:-1,
+        list:[],
         current:{
+
             id:"",
             val:"",
             completed:false,
             
         },
 
-        list:[
-            
-
-        ],
-
+    
 
     },
 
@@ -26,15 +26,23 @@ var app= new Vue({
         this.list = val || this.list;
     },
 
+
+
     methods:{
        add:function() {
+        // console.log("初始化之前的id_timer的值为：",this.id_timer);
+  
+        this.id_timer = this.id_timer + 1 ;
+        this.current.id = this.id_timer;
 
+        // console.log("初始化之后的current.id的值为：",this.current.id);
+        // console.log("初始化之后的current.id_timer的值为：",this.id_timer);
+
+
+        
         var current = this.current;
-        // current.id ++;
-        console.log("current.val的属性",typeof current.val);
-        console.log("current.val的数值",current.val);
 
-        if(current.val.length > 0){
+        if(current.val.length >= 0){
 
             this.list.push(current);
         }
@@ -52,27 +60,16 @@ var app= new Vue({
        },
 
        completed:function (id) {
-        //    console.log(099);
-        //    console.log(id);
-            // var me= this; 
-            // var index= this.list.findIndex(
-            //     function(id){ 
-                    
-            //         for(i=0, i<me.list.length,i++){
-            //             if()
-            //         }
-                    
-            //         return id == me.index;
-                    
-            //     }
-            // );
-            // console.log("找到的索引值为。",index);
-            // console.log("找到的索引值为。",me.list.index);
 
-            Vue.set(this.list[id],'completed',!this.list[id].completed);
+            console.log("completed方法传来的id",id);
+
+            index = this.find_index(id);
+
+
+            Vue.set(this.list[index],'completed',!this.list[index].completed);
 
             // this.list[id].completed=!this.list[id].completed;
-            console.log('此时 completed 的值',this.list[id].completed)
+            // console.log('此时 completed 的值',this.list[id].completed)
 
            
        },
@@ -81,22 +78,34 @@ var app= new Vue({
 
 
        delect:function (id) {
-           this.list.splice(id,1);
+           console.log("delect方法传来的id",id);
            
+           var get_id;
+           get_id= this.find_index(id);
+           
+           console.log("删除的值是",this.list[get_id]);
+           this.list.splice(get_id,1);
        },
+
 
        find_index:function (id) {
         //     设置返回值
 
             return this.list.findIndex(function(item) {
+           console.log("--------------------");
+
+                console.log("item的值：",item);
+
+                console.log("item.id的值：",item.id);
+                console.log("id的值：",id);
+                // [{title: "我", id: 1}, {title: " ", id: 2}, {title: "0", id: 3}, {title: "2ode", id: 4}]
+
                 return item.id == id;
                 //当数组中的元素在测试条件时返回 true 时, findIndex() 返回符合条件的元素的索引位置
                 
             })
-        
-
            
-       }
+       },
        
         
 
