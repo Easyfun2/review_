@@ -78,8 +78,23 @@ var app= new Vue({
        },
 
 
+
+
        delect:function (id) {
            this.list.splice(id,1);
+           
+       },
+
+       find_index:function (id) {
+        //     设置返回值
+
+            return this.list.findIndex(function(item) {
+                return item.id == id;
+                //当数组中的元素在测试条件时返回 true 时, findIndex() 返回符合条件的元素的索引位置
+                
+            })
+        
+
            
        }
        
