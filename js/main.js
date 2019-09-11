@@ -87,6 +87,11 @@ var app= new Vue({
            this.list.splice(get_id,1);
        },
 
+    //    字符串转对象  对象转字符串
+    //    字符串转数组  数组转字符串
+    //    对象转数组    数组转对象
+
+
 
        find_index:function (id) {
         //     设置返回值
