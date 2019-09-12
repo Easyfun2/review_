@@ -3,13 +3,13 @@ var app= new Vue({
     el:"#main",
 
     data:{
-        id_timer:-1,
+        id_timer:"",
         list:[],
         current:{
 
             id:"",
             val:"",
-            completed:false,
+            completed:"",
             
         },
 
@@ -24,6 +24,18 @@ var app= new Vue({
         
         var val = ms.get("LIST");
         this.list = val || this.list;
+
+        var init_id_timer = ms.get("ID_TIMER");
+        console.log("init_id_timer,",init_id_timer);
+        console.log("1、this.id_timer,",this.id_timer);
+
+        this.id_timer = init_id_timer || -1;
+        console.log("2、this.id_timer,",this.id_timer);
+
+
+
+
+        
     },
 
 
@@ -133,6 +145,17 @@ var app= new Vue({
                     }
                 }
             },
+
+        id_timer:{
+            deep:true,
+            handler:function (n,o) {
+                if(n){
+                    ms.set("ID_TIMER",n)
+                }else{
+                    return
+                }                
+            }
+        }
             
             
         },
