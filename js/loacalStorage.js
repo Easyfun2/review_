@@ -32,3 +32,17 @@
 ms.set('test',new Date());
 
 console.log("看看现在的时间是，",ms.get('test'));
+
+function a(id) {
+    console.log("测试下这个关于return的函数吧")
+    return "看看函数a的返回值是什么呢？"+id
+    
+};
+
+
+var test= function () {
+    return a(10)    
+  
+} ;
+
+console.log(test())
