@@ -10,6 +10,8 @@ var app= new Vue({
             id:"",
             val:"",
             completed:"",
+            des:"test",
+            show_detail:false,
             
         },
 
@@ -123,9 +125,15 @@ var app= new Vue({
             })
            
        },
+
+       show_detail:function(id){
+
+        var index = this.find_index(id);
+        Vue.set(this.list[index],"show_detail",!this.list[index].show_detail);
+       }
        
         
-
+// 耳朵留学
        
         
 
